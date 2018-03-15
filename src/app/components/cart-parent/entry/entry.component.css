@@ -1,0 +1,16 @@
+tr td{
+    vertical-align: middle;
+}
+@media screen and (max-width: 600px) {
+    tr td .form-control{
+		width:20%;
+		display: inline !important;
+	}
+
+	tr td { display: block; padding: .6rem; min-width:320px;}
+	tr td:first-child { background: #333; color: #fff; }
+	tr td:before {
+		content: attr(data-th); font-weight: bold;
+		display: inline-block; width: 8rem;
+	}
+}

@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-md-12 col-sm-12 colxs-12 img-section card-img-top">
+    <img src="{{product.images[0]}}">
+  </div>
+  <div class="card-body">
+  <div class="col-md-12 col-sm-12 col-xs-12 image-title">
+    <h3>{{product.brand}} - {{product.name}}</h3>
+    <span>{{product.price | currency:product.currency}}</span>
+  </div>
+
+
+  <div class="col-md-12 col-sm-12 col-xs-12 card-buttons">
+    <button (click)="addToCart(product.productId)" class="btn btn-success add-cart-btn">ADD TO CART</button>
+    <a routerLink="/products/{{product.productId}}" class="btn btn-success add-cart-btn pull-right">DETAILS</a>
+  </div>
+
+</div>

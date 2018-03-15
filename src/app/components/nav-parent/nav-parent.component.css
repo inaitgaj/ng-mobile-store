@@ -1,0 +1,6 @@
+.navbar-brand:hover .hover-red{
+  color :red;
+}
+button.btn{
+  cursor: pointer;
+}

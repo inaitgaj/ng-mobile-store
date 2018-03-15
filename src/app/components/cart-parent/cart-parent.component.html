@@ -1,0 +1,60 @@
+<div class="container nav-buffer">
+
+  <table *ngIf= "entries" id="cart" class="table table-hover table-condensed">
+  	<thead>
+  		<tr>
+  			<th style="width:50%">Product</th>
+  			<th style="width:10%">Price</th>
+  			<th style="width:8%">Quantity</th>
+  			<th style="width:22%" class="text-center">Subtotal</th>
+  			<th style="width:10%"></th>
+  		</tr>
+  	</thead>
+		<tbody>
+      <tr *ngFor="let entry of entries">
+      <td data-th="Product" class="product">
+        <div class="row">
+          <div class="col-sm-2 hidden-xs product-image"><img src="{{entry.product.images[0]}}" alt="..." class="img-responsive"/></div>
+          <div class="col-sm-8 product-details">
+            <h4 class="nomargin">{{entry.product.brand}} {{entry.product.name}}</h4>
+            <!-- <p>{{entry.product.description}}</p> -->
+          </div>
+        </div>
+      </td>
+      <td data-th="Price">{{entry.product?.price | currency : entry.product.currency}}</td>
+      <td data-th="Quantity" class="flex">
+        <a (click) = "updateCart(entry.productId, entry.quantity, -1)" class="btn btn-info btn-sm"><i class="fa fa-minus-square"></i></a>
+        <input type="number" class="form-control text-center" value="{{entry.quantity}}">
+        <a (click) = "updateCart(entry.productId, entry.quantity, 1)" class="btn btn-info btn-sm"><i class="fa fa-plus-square"></i></a>
+      </td>
+      <td data-th="Subtotal" class="text-center">{{entry.product.price | multiply:entry.quantity  | currency : entry.product.currency}}</td>
+      <td class="actions" data-th="">
+        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+      </td>
+      </tr>
+
+    </tbody>
+    <tfoot>
+      <!-- <tr class="hidden-sm hidden-lg">
+        <td class="text-center"><strong>Total {{total | currency}}</strong></td>
+      </tr> -->
+      <tr>
+        <td><a routerLink="/products" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+        <td colspan="2" class="hidden-xs"></td>
+        <td class="hidden-xs text-center"><strong>Total= {{total|currency:'INR'}}</strong></td>
+        <td>
+          <button id ="placeOrder" href="#" [disabled]="isLoggedIn" class="btn btn-success btn-block">Place Order <i class="fa fa-angle-right"></i>
+          </button>
+          <em *ngIf="isLoggedIn">Need to login</em>
+        </td>
+      </tr>
+    </tfoot>
+
+  </table>
+
+  <div *ngIf="!entries" class= "">
+  <h3>Looks like your cart is empty.</h3>
+  <a routerLink="/products" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a>
+  </div>
+</div>

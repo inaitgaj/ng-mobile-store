@@ -1,0 +1,6 @@
+.card {
+  padding : 10px;
+}
+.card:hover {
+  background-color: #eceeef;
+}

@@ -1,0 +1,12 @@
+<ul class="navbar-nav" *ngIf = "!usernameChild">
+  <li class="nav-item active"><a class="nav-link" routerLink="/user/signup"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+  <li class="nav-item active"><a class="nav-link" routerLink="/user/login"><span class=""></span>Login</a></li>
+  <li class="nav-item active"><a class="nav-link" routerLink="/cart"><span class="fa fa-shopping-cart"></span> {{cartQuantity}}</a></li>
+
+</ul>
+<ul class="navbar-nav" *ngIf = "usernameChild">
+  <li class="nav-item active"><a class="nav-link" routerLink="/user/profile"><span class="fa fa-user-circle"></span> {{usernameChild}}</a></li>
+  <li class="nav-item active"><a class="nav-link" (click) = "logOutChild()"><span class=""></span>Logout</a></li>
+  <li class="nav-item active"><a class="nav-link" routerLink="/cart"><span class="fa fa-shopping-cart"></span> {{cartQuantity}}</a></li>
+
+</ul>

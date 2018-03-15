@@ -1,0 +1,24 @@
+<!-- <p-megaMenu [model]="items"></p-megaMenu> -->
+
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <a class="navbar-brand" routerLink= "/home"><span class="hover-red">Mobile</span> Mart</a>
+      <div class="navbar-collapse collapse" id="navbarSupportedContent" aria-expanded="false" style="">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home"> <span class="fa fa-home"></span> Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/products">Products</a>
+          </li>
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+          <input #search class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button (click)="onSearch(search.value)" class="btn btn-outline-success my-2 my-sm-0 fa fa-search"></button>
+        </div>
+        <app-nav-child [usernameChild] = "username" [cartQuantity]="cartQuantity" (onLogout) = "logout($event)"></app-nav-child>
+      </div>
+
+</nav>

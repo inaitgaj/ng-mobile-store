@@ -1,0 +1,13 @@
+.product-details td{
+  padding-left : 10px;
+}
+.product-details {
+  margin : 30px;
+}
+.card-img-top {
+  width: 90%;
+  margin : 5%;
+}
+.add-cart-btn{
+  cursor: pointer;
+}
