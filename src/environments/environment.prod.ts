@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  httpPrefix: 'https://mobilemart.herokuapp.com'
+  httpPrefix: 'http://herokuapp.com'
 };
