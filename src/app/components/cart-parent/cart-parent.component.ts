@@ -12,7 +12,7 @@ import {NavServiceService} from '../../services/nav-service.service';
 export class CartParentComponent implements OnInit {
   entries: Entry[];
   total: number;
-  isLoggedIn: boolean = true;
+  isNotLoggedIn: boolean = true;
   constructor(private cartService: CartService, private authService: AuthService, private navService : NavServiceService) {
 
   }
@@ -25,15 +25,18 @@ export class CartParentComponent implements OnInit {
         this.total = data.total;
       }
     );
-    var username = this.authService.currentUser;
-    if ((
-          (typeof username != "undefined") &&
-          (typeof username.valueOf() == "string")
-        ) &&
-        (username.length > 0))
-      {
-      this.isLoggedIn = false;
-    }
+
+    this.navService.navState$.subscribe(
+      (state)=>
+    {
+      if(state.hasOwnProperty("username")){
+        if(state["username"]){
+          var username = state["username"] ;
+          console.log("user in cart component"+username);
+          this.isNotLoggedIn = false;
+        }
+      }
+    });
   }
   updateCart(productId, oldQuantity, newQuantity) {
     var quantity = parseFloat(oldQuantity) + parseFloat(newQuantity);

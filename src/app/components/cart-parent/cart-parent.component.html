@@ -29,8 +29,7 @@
       </td>
       <td data-th="Subtotal" class="text-center">{{entry.product.price | multiply:entry.quantity  | currency : entry.product.currency}}</td>
       <td class="actions" data-th="">
-        <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-        <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+
       </td>
       </tr>
 
@@ -44,9 +43,9 @@
         <td colspan="2" class="hidden-xs"></td>
         <td class="hidden-xs text-center"><strong>Total= {{total|currency:'INR'}}</strong></td>
         <td>
-          <button id ="placeOrder" href="#" [disabled]="isLoggedIn" class="btn btn-success btn-block">Place Order <i class="fa fa-angle-right"></i>
+          <button id ="placeOrder" href="#" [disabled]="isNotLoggedIn" class="btn btn-success btn-block">Place Order <i class="fa fa-angle-right"></i>
           </button>
-          <em *ngIf="isLoggedIn">Need to login</em>
+          <em *ngIf="isNotLoggedIn">Need to login</em>
         </td>
       </tr>
     </tfoot>

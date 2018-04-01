@@ -3,10 +3,10 @@
     <h2>{{products?.length}} Products Found</h2>
   </div>
 <div class="row">
-<div class="row">
+
   <div class="col-md-3 col-sm-3 col-xs-12 card " *ngFor="let product of products">
     <app-product-list-child [product] = "product" ></app-product-list-child>
   </div>
 </div>
-</div>
+
 </div>

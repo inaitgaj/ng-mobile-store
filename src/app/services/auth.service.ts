@@ -14,6 +14,7 @@ export class AuthService {
     this.http.get<string>(environment.httpPrefix+'/users', { withCredentials: true }).subscribe(
       data=>{
         console.log("Found logged in user");
+        this.currentUser = data;
         this.navService.setNavBarState({username:data});
       },
       err => console.log("Could not find session on backend using cookie,e-"+err)
