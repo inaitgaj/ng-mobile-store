@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  httpPrefix: 'https://mobilemart.herokuapp.com'
-};
+  httpPrefix: 'http://localhost:3000'
+}
