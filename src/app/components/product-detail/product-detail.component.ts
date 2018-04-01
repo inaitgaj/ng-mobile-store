@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import {DataService} from '../../services/data.service';
 import {CartService} from '../../services/cart.service';
 import {NavServiceService} from '../../services/nav-service.service';
-import { Product } from '../../models/Product';
+import { Product } from '../../models/product';
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
