@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  httpPrefix: 'http://localhost:3000'
+  //using proxy in ng build --proxy-config proxy.conf.json to redirect node requests to 3000 port automatically.
+  httpPrefix: '/api'
 }
