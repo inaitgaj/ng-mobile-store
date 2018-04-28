@@ -8,7 +8,7 @@ import { ProductListComponent} from '../../components/product-list/product-list.
 import { ProductSearchComponent} from '../../components/product-search/product-search.component';
 import { ProductDetailComponent} from '../../components/product-detail/product-detail.component';
 import {CartParentComponent} from '../../components/cart-parent/cart-parent.component';
-
+import {ProductCreateComponent} from '../../components/admin/product-create/product-create.component';
 
 const routes: Routes = [
   { path : '' , redirectTo: 'home', pathMatch : 'full'},
@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'products/:productId', component: ProductDetailComponent },
   { path: 'user', loadChildren: '../user/user.module#UserModule' },
     { path: 'cart', component: CartParentComponent },
-
+    { path: 'admin/createproduct', component: ProductCreateComponent  },  
 ];
 
 @NgModule({

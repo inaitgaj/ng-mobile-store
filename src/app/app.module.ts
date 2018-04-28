@@ -25,6 +25,7 @@ import { NavChildComponent } from './components/nav-parent/nav-child/nav-child.c
 import { CartParentComponent } from './components/cart-parent/cart-parent.component';
 import { EntryComponent } from './components/cart-parent/entry/entry.component';
 import { MultiplyPipe } from './pipes/multiply.pipe';
+import { ProductCreateComponent } from './components/admin/product-create/product-create.component';
 
 
 
@@ -41,7 +42,8 @@ import { MultiplyPipe } from './pipes/multiply.pipe';
     NavChildComponent,
     CartParentComponent,
     EntryComponent,
-    MultiplyPipe
+    MultiplyPipe,
+    ProductCreateComponent
   ],
   imports: [
     BrowserModule,
