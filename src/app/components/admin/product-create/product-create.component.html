@@ -1,0 +1,28 @@
+
+
+
+<form method="post" enctype="multipart/form-data" action="{{httpPrefix}}/upload/s3" class="nav-buffer">
+  <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
+  <div class="form-group">
+    <p><input type="number" name="productId" placeholder="productId" class="form-control"/></p>
+  </div>
+    <p><input type="text" name="name" placeholder="name" class="form-control"/></p>
+    <p><input type="text" name="brand" placeholder="brand" class="form-control"/></p>
+    <p><input type="text" name="screen" placeholder="screen" class="form-control"/></p>
+    <p><input type="text" name="camera" placeholder="camera" class="form-control"/></p>
+    <p><input type="text" name="ois" placeholder="ois" class="form-control"/></p>
+    <p><input type="text" name="os" placeholder="os" class="form-control"/></p>
+    <p><input type="text" name="description" placeholder="description" class="form-control"/></p>
+    <p><input type="text" name="price" placeholder="price" class="form-control"/></p>
+    <p><input type="text" name="currency" placeholder="currency" class="form-control"/></p>
+    <p><input type="number" name="stock" placeholder="stock" class="form-control"/></p>
+    <p>
+        <!-- <input type="file" name="upl" accept="image/*" multiple class="form-control" (change)="onFileChange($event)" #fileInput/> -->
+        <input type="file" name="upl" accept="image/*" multiple class="form-control"/>
+    </p>
+
+    <p>
+      <button type="submit">Submit </button>
+        <!-- <button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button> -->
+    </p>
+</form>

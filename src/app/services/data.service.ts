@@ -19,4 +19,16 @@ export class DataService {
   getProductSearchData (term : string): Observable<Product[]> {
     return this.http.get<Product[]>(environment.httpPrefix+'/products/search/'+term, { withCredentials: true });
   }
+  createProduct(product: Product) {
+    return this.http.post<boolean>(environment.httpPrefix+'/uploads/s3', product, { withCredentials: true }).subscribe(
+      data => {
+        if (data) {
+          alert("success");
+        } else {
+          alert("failed");
+        }
+      },
+      err => console.log(err)
+    );
+  }
 }
