@@ -26,8 +26,8 @@ import { CartParentComponent } from './components/cart-parent/cart-parent.compon
 import { EntryComponent } from './components/cart-parent/entry/entry.component';
 import { MultiplyPipe } from './pipes/multiply.pipe';
 import { ProductCreateComponent } from './components/admin/product-create/product-create.component';
-
-
+import { MaterialModule } from './material.module';
+import {AuthService} from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -48,12 +48,14 @@ import { ProductCreateComponent } from './components/admin/product-create/produc
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    //TODO not used
     MegaMenuModule,
     HttpClientModule,
     AppRoutingModule,
-    UserModule,
+    //UserModule,
+    MaterialModule
   ],
-  providers: [DataService, NavServiceService, CartService],
+  providers: [DataService, NavServiceService, CartService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

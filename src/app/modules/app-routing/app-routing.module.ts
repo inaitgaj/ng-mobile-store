@@ -17,9 +17,9 @@ const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   {path: 'search', component: ProductSearchComponent},
   { path: 'products/:productId', component: ProductDetailComponent },
-  { path: 'user', loadChildren: '../user/user.module#UserModule' },
+  { path: 'user', loadChildren: '../user/user-routing.module#UserRoutingModule' },
     { path: 'cart', component: CartParentComponent },
-    { path: 'admin/createproduct', component: ProductCreateComponent  },  
+    { path: 'admin/createproduct', component: ProductCreateComponent  },
 ];
 
 @NgModule({

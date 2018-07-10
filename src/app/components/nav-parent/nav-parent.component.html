@@ -15,7 +15,8 @@
           </li>
         </ul>
         <div class="form-inline mt-2 mt-md-0">
-          <input #search class="form-control mr-sm-2" type="text" placeholder="Search">
+          <!--  keyup.enter  is pseudo event -->
+          <input #search class="form-control mr-sm-2" type="text" placeholder="Search" (keyup.enter)="onSearch(search.value)">
           <button (click)="onSearch(search.value)" class="btn btn-outline-success my-2 my-sm-0 fa fa-search"></button>
         </div>
         <app-nav-child [usernameChild] = "username" [cartQuantity]="cartQuantity" (onLogout) = "logout($event)"></app-nav-child>

@@ -27,7 +27,7 @@
         <input type="number" class="form-control text-center" value="{{entry.quantity}}">
         <a (click) = "updateCart(entry.productId, entry.quantity, 1)" class="btn btn-info btn-sm"><i class="fa fa-plus-square"></i></a>
       </td>
-      <td data-th="Subtotal" class="text-center">{{entry.product.price | multiply:entry.quantity  | currency : entry.product.currency}}</td>
+      <td data-th="Subtotal" class="text-center">{{entry.product.price | multiply : entry.quantity  | currency : entry.product.currency}}</td>
       <td class="actions" data-th="">
 
       </td>
